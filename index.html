@@ -1,187 +1,359 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Wellness Products and Blog</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f4f4f4;
-            }
-            header {
-                background-color: #2c3e50;
-                color: white;
-                padding: 1rem;
-                text-align: center;
-            }
-            .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-            .section {
-                margin-bottom: 40px;
-                background-color: white;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            }
-            .section h2 {
-                color: #2c3e50;
-                border-bottom: 2px solid #3498db;
-                padding-bottom: 10px;
-                margin-bottom: 20px;
-            }
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wellness Products and Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .item {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .item:hover {
+            transform: scale(1.05);
+        }
+        .item.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .looker-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .looker-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+        @media (max-width: 600px) {
             .item-list {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 20px;
+                grid-template-columns: 1fr;
             }
-            .item {
-                background-color: #ecf0f1;
-                padding: 15px;
-                border-radius: 5px;
-                cursor: pointer;
-                transition: transform 0.2s;
-            }
-            .item:hover {
-                transform: scale(1.05);
-            }
-            .item.active {
-                background-color: #3498db;
-                color: white;
-            }
-            .looker-container {
-                width: 100%;
-                height: 500px;
-                border-radius: 10px;
-                overflow: hidden;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            }
-            .looker-container iframe {
-                width: 100%;
-                height: 100%;
-                border: none;
-                border-radius: 10px;
-            }
-            @media (max-width: 600px) {
-                .item-list {
-                    grid-template-columns: 1fr;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <h1>Wellness Products and Blog</h1>
-        </header>
-        <div class="container">
-            <!-- UX Blocks Section -->
-            <div class="section" id="ux-blocks">
-                <h2>UX Blocks</h2>
-                <div class="item-list" id="ux-list">
-                    <div class="item">Woo Cat: Bottom - Liquid Soap</div>
-                    <div class="item">Woo Cat: Top - Black Tea</div>
-                    <div class="item">Woo Cat: Bottom - Tea</div>
-                    <div class="item">Woo Cat: Bottom - Black Seed Oil</div>
-                    <div class="item">Woo Cat: Top - Black Seed</div>
-                    <div class="item">Woo Cat: Hero - Sea Moss (Top)</div>
-                    <div class="item">Woo Cat: Top - Liquid Soap</div>
-                    <div class="item">Woo Cat: Bottom - Herbs & Roots</div>
-                    <div class="item">Woo Cat: Bottom - Herbs & Roots (A-C)</div>
-                    <div class="item">Woo Cat: Top - Herbs & Roots (A-C)</div>
-                    <div class="item">Woo Cat: Bottom - Black Tea</div>
-                    <div class="item">Woo Cat: Bottom - Green Tea</div>
-                    <div class="item">Woo PP: Soursop Living Bitter</div>
-                    <div class="item">Woo PP: Soursop Mixberries</div>
-                    <div class="item">Woo PP: Shilajit Bitter</div>
-                    <div class="item">Woo PP: Men Tonic</div>
-                    <div class="item">Woo PP: Super Sea Moss Bitter</div>
-                    <div class="item">Woo PP: Soursop Bitters for Colon Cleansing</div>
-                    <div class="item">Woo PP: Colon Cleanser Bitter (White)</div>
-                    <div class="item">Woo PP: Black Seed Bitter</div>
-                    <div class="item">Woo PP: Moringa Living Bitters</div>
-                    <div class="item">Woo PP: Turmeric Living Bitters</div>
-                    <div class="item">Woo PP: Mushroom Complexes Bitter</div>
-                    <div class="item">Woo PP: Super Sea Moss Honey</div>
-                    <div class="item">Woo PP: Gold Irish Sea Moss</div>
-                    <div class="item">Woo PP: Soursop Leaves 50Gram (Fresh)</div>
-                    <div class="item">Woo PP: Prekese Aidan Fruit</div>
-                    <div class="item">Woo PP: Purple Sea Moss</div>
-                </div>
-            </div>
-
-            <!-- Blog Posts Section -->
-            <div class="section" id="blog-posts">
-                <h2>Blog Posts</h2>
-                <div class="item-list" id="blog-list">
-                    <div class="item">Honey Crystallization</div>
-                    <div class="item">World Digestive Health Day</div>
-                    <div class="item">15 Benefits of Soursop Leaves</div>
-                    <div class="item">Father's Day 2025</div>
-                    <div class="item">Black History Day</div>
-                    <div class="item">International Yoga Day</div>
-                    <div class="item">Anti Drug Day</div>
-                    <div class="item">PTSD Awareness Day</div>
-                </div>
-            </div>
-
-            <!-- Product Pages Section -->
-            <div class="section" id="product-pages">
-                <h2>Product Pages</h2>
-                <div class="item-list" id="product-list">
-                    <div class="item">Soursop Bitter</div>
-                    <div class="item">Mixberry Soursop Bitter</div>
-                    <div class="item">Shilajit Bitter</div>
-                    <div class="item">Men Tonic</div>
-                    <div class="item">Soursop Bitters for Colon Cleansing</div>
-                    <div class="item">Super Sea Moss Bitter</div>
-                    <div class="item">Soursop Living Bitter & Natural Men Tonic</div>
-                    <div class="item">Black Seed Bitter</div>
-                    <div class="item">Moringa Bitter</div>
-                    <div class="item">Turmeric Bitter</div>
-                    <div class="item">Mushroom Complex Bitter</div>
-                    <div class="item">Soursop Leaves 50Gram (Fresh)</div>
-                    <div class="item">Soursop Living Bitter & Shilajit Bitter Combo</div>
-                    <div class="item">Super Sea Moss Honey</div>
-                    <div class="item">Gold Irish Sea Moss</div>
-                    <div class="item">Prekese Aidan Fruit</div>
-                    <div class="item">Purple Sea Moss</div>
-                </div>
-            </div>
-
-            <!-- Looker Studio Section -->
-            <div class="section" id="looker-studio">
-                <h2>Analytics Dashboard</h2>
-                <div class="looker-container">
-                    <iframe 
-                        src="https://lookerstudio.google.com/embed/reporting/f46b023d-ba05-4db4-95e8-270bf06d9df0/page/p_6j1b3y7xtd" 
-                        frameborder="0" 
-                        style="border:0" 
-                        allowfullscreen 
-                        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
-                    </iframe>
-                </div>
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Wellness Products and Blog</h1>
+    </header>
+    <div class="container">
+        <!-- UX Blocks Section -->
+        <div class="section" id="ux-blocks">
+            <h2>UX Blocks</h2>
+            <div class="item-list" id="ux-list">
+                <div class="item">Woo Cat: Bottom - Liquid Soap</div>
+                <div class="item">Woo Cat: Top - Black Tea</div>
+                <div class="item">Woo Cat: Bottom - Tea</div>
+                <div class="item">Woo Cat: Bottom - Black Seed Oil</div>
+                <div class="item">Woo Cat: Top - Black Seed</div>
+                <div class="item">Woo Cat: Hero - Sea Moss (Top)</div>
+                <div class="item">Woo Cat: Top - Liquid Soap</div>
+                <div class="item">Woo Cat: Bottom - Herbs & Roots</div>
+                <div class="item">Woo Cat: Bottom - Herbs & Roots (A-C)</div>
+                <div class="item">Woo Cat: Top - Herbs & Roots (A-C)</div>
+                <div class="item">Woo Cat: Bottom - Black Tea</div>
+                <div class="item">Woo Cat: Bottom - Green Tea</div>
+                <div class="item">Woo PP: Soursop Living Bitter</div>
+                <div class="item">Woo PP: Soursop Mixberries</div>
+                <div class="item">Woo PP: Shilajit Bitter</div>
+                <div class="item">Woo PP: Men Tonic</div>
+                <div class="item">Woo PP: Super Sea Moss Bitter</div>
+                <div class="item">Woo PP: Soursop Bitters for Colon Cleansing</div>
+                <div class="item">Woo PP: Colon Cleanser Bitter (White)</div>
+                <div class="item">Woo PP: Black Seed Bitter</div>
+                <div class="item">Woo PP: Moringa Living Bitters</div>
+                <div class="item">Woo PP: Turmeric Living Bitters</div>
+                <div class="item">Woo PP: Mushroom Complex Bitters</div>
+                <div class="item">Woo PP: Super Sea Moss Honey</div>
+                <div class="item">Woo PP: Gold Irish Sea Moss</div>
+                <div class="item">Woo PP: Soursop Leaves 50Gram (Fresh)</div>
+                <div class="item">Woo PP: Prekese Aidan Fruit</div>
+                <div class="item">Woo PP: Purple Sea Moss</div>
             </div>
         </div>
 
-        <script>
-            // Add click event listeners to items for interactivity
-            document.querySelectorAll('.item').forEach(item => {
-                item.addEventListener('click', () => {
-                    // Remove active class from all items in the same section
-                    item.parentElement.querySelectorAll('.item').forEach(sibling => {
-                        sibling.classList.remove('active');
-                    });
-                    // Add active class to clicked item
-                    item.classList.add('active');
-                    // Optional: Log the clicked item for further functionality
-                    console.log('Clicked:', item.textContent);
+        <!-- Blog Posts Section -->
+        <div class="section" id="blog-posts">
+            <h2>Blog Posts</h2>
+            <div class="item-list" id="blog-list">
+                <div class="item">Honey Crystallization</div>
+                <div class="item">World Digestive Health Day</div>
+                <div class="item">15 Benefits of Soursop Leaves</div>
+                <div class="item">Father's Day 2025</div>
+                <div class="item">Black History Day</div>
+                <div class="item">International Yoga Day</div>
+                <div class="item">Anti Drug Day</div>
+                <div class="item">PTSD Awareness Day</div>
+            </div>
+        </div>
+
+        <!-- Product Pages Section -->
+        <div class="section" id="product-pages">
+            <h2>Product Pages</h2>
+            <div class="item-list" id="product-list">
+                <div class="item">Soursop Bitter</div>
+                <div class="item">Mixberry Soursop Bitter</div>
+                <div class="item">Shilajit Bitter</div>
+                <div class="item">Men Tonic</div>
+                <div class="item">Soursop Bitters for Colon Cleansing</div>
+                <div class="item">Super Sea Moss Bitter</div>
+                <div class="item">Soursop Living Bitter & Natural Men Tonic</div>
+                <div class="item">Black Seed Bitter</div>
+                <div class="item">Moringa Bitter</div>
+                <div class="item">Turmeric Bitter</div>
+                <div class="item">Mushroom Complex Bitter</div>
+                <div class="item">Soursop Leaves 50Gram (Fresh)</div>
+                <div class="item">Soursop Living Bitter & Shilajit Bitter Combo</div>
+                <div class="item">Super Sea Moss Honey</div>
+                <div class="item">Gold Irish Sea Moss</div>
+                <div class="item">Prekese Aidan Fruit</div>
+                <div class="item">Purple Sea Moss</div>
+            </div>
+        </div>
+
+        <!-- Looker Studio Section -->
+        <div class="section" id="looker-studio">
+            <h2>Analytics Dashboard</h2>
+            <div class="looker-container">
+                <iframe 
+                    src="https://lookerstudio.google.com/embed/reporting/f46b023d-ba05-4db4-95e8-270bf06d9df0/page/p_6j1b3y7xtd" 
+                    frameborder="0" 
+                    style="border:0" 
+                    allowfullscreen 
+                    sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- SEO Updates Section -->
+        <div class="section" id="seo-updates">
+            <h2>SEO Updates</h2>
+            <div class="item-list" id="seo-updates-list">
+                <div class="item">6/1/2025
+                    <ol>
+                        <li>Bulk moss ux block added</li>
+                        <li>Tea and liquid soap published (top and bottom)</li>
+                        <li>Mega menu (working)</li>
+                        <li>Herbs A to Z added (couldn't edit further, [padding, margin] because don't have permission or not showing from my end. Added screenshot in the meeting room)</li>
+                    </ol>
+                </div>
+                <div class="item">6/2/2025
+                    <ol>
+                        <li>Fixed the Bulk Raw Sea Moss (as boss suggested)</li>
+                        <li>Fixed liquid soap ux top (merge top block, add information based on the product label, and bottom block info added)</li>
+                        <li>Worked on the Mega menu (add all the category and the products to the category)</li>
+                        <li>Working on herbs and root ux block (optimized top, working on the bottom block)</li>
+                        <li>Working on the "honey crystallization" (will be done by tomorrow)</li>
+                    </ol>
+                </div>
+                <div class="item">6/3/2025
+                    <ol>
+                        <li>Updated and publish herbs to roots ux block and published</li>
+                        <li>Worked on Herbs A-C ux block (top and bottom), kw researched add contents</li>
+                        <li>Finished Honey Crystallization blog, create few images, add on draft</li>
+                        <li>Merge the mega menu</li>
+                    </ol>
+                </div>
+                <div class="item">6/4/2025
+                    <ol>
+                        <li>Edit a-c (herbs & roots) ux block, and start work on tea categories</li>
+                    </ol>
+                </div>
+                <div class="item">6/5/2025
+                    <ol>
+                        <li>Edited ux block portion of herbs and roots (a-c)</li>
+                        <li>Created black tea top ux block</li>
+                        <li>Kw researched, edit and add images, created black tea bottom ux block, add all contents (up for review)</li>
+                        <li>Working on green tea ux block</li>
+                    </ol>
+                </div>
+                <div class="item">6/6/2025
+                    <ol>
+                        <li>Added product quality, product processing, product packing block in (draft) herbs & roots ux block</li>
+                        <li>Worked on green tea ux block and finalize it</li>
+                        <li>Cross checked and fix categories (shop mega menu)</li>
+                        <li>Working on soursop product page (ux block)</li>
+                        <li>Publish black tea top and bottom block and green tea top and bottom block</li>
+                    </ol>
+                </div>
+                <div class="item">6/9/2025
+                    <ol>
+                        <li>Worked on the soursop bitter (add short description/caption) the ingredients</li>
+                        <li>Added block to the soursop bottom ux block, and asked the portion as boss asked</li>
+                        <li>Work on the soursop mix berries bitter (created bottom ux block and kw research)</li>
+                        <li>Research for the lost ranking keyword (using semrush)</li>
+                    </ol>
+                </div>
+                <div class="item">6/10/2025
+                    <ol>
+                        <li>Editing and changing the benefits section like (herb A to Z) some faq's in soursop mix berries bitter</li>
+                        <li>Kw researched, write content and created a product blog for (Shilajit bitter) and publish</li>
+                        <li>Publish "soursop bitter"</li>
+                    </ol>
+                </div>
+                <div class="item">6/11/2025
+                    <ol>
+                        <li>Added and rewrote “Soursop Living Bitters” and “Soursop Mixberry Bitter” product descriptions (titles, keywords, meta)</li>
+                        <li>Researched keywords, rewrote and published “Mullein Leaf,” plus added images</li>
+                        <li>Work on men tonic ux block (category)</li>
+                    </ol>
+                </div>
+                <div class="item">6/12/2025
+                    <ol>
+                        <li>Kw research, plagiarism check, edited, added "Shilajit Powder" Short and Long Description/Title/Meta/url</li>
+                        <li>Kw research, plagiarism check, edited, added "Andrographis Paniculata Powder" Short and Long Description/Title/Meta/url</li>
+                        <li>Worked on "Shilajit Bitter" Product page</li>
+                        <li>Worked on "Natural Men Tonic" ux block</li>
+                        <li>Worked on the Description Product page optimization</li>
+                    </ol>
+                </div>
+                <div class="item">6/13/2025
+                    <ol>
+                        <li>Shilajit bitter, Soursop living bitter, Men Tonic and Mixberry bitter USDA certifications removed</li>
+                        <li>Asterisk* add to all the product pages (also will add the category, later as well)</li>
+                        <li>Moved the "3 block upward" (4 PP) and implemented "African Soap" block</li>
+                        <li>Add a new long description to xylitol powder</li>
+                        <li>Changed the men tonic ingredients</li>
+                        <li>Ux block - (soursop bitter colon cleanse - working</li>
+                    </ol>
+                </div>
+                <div class="item">6/16/2025
+                    <ol>
+                        <li>Herbal bitter Ux block, and product page "description optimization"</li>
+                        <li>Soursop colon cleanse product page, and ux block</li>
+                        <li>Super sea moss bitter ux block</li>
+                    </ol>
+                </div>
+                <div class="item">6/17/2025
+                    <ol>
+                        <li>Sea moss bitter product page seo optimization, kw research ux block</li>
+                        <li>Colon Cleanse Bitter ux block</li>
+                    </ol>
+                </div>
+                <div class="item">6/18/2025
+                    <ol>
+                        <li>Black seed bitter - product page optimation and ux block</li>
+                        <li>Blog - US Black History Day</li>
+                        <li>Moringa living bitter ux block</li>
+                    </ol>
+                </div>
+                <div class="item">6/19/2025
+                    <ol>
+                        <li>Remove disclaimer from the pp descriptions, add ingredients links to the ux block</li>
+                        <li>Add seo optimize description (title, meta, short/long descriptions, alt tags)</li>
+                        <li>Turmeric Bitter UX block</li>
+                    </ol>
+                </div>
+                <div class="item">6/20/2025
+                    <ol>
+                        <li>Turmeric bitter kw res, SEO optimize description</li>
+                        <li>Mushroom complex bitter ux block & Product page</li>
+                        <li>Weekly blogpost</li>
+                    </ol>
+                </div>
+                <div class="item">6/23/2025
+                    <ol>
+                        <li>seo optimize description/kw research/plagiarism check: soursop living bitters & natural men tonic</li>
+                        <li>soursop living bitter & shilajit bitter combo</li>
+                        <li>Super Sea moss honey ux block</li>
+                    </ol>
+                </div>
+                <div class="item">6/24/2025
+                    <ol>
+                        <li>super sea moss honey: seo optimize description, keyword research (title, meta, short/long descriptions, alt tags)</li>
+                        <li>Weekly blogpost: Anti drug day</li>
+                        <li>Ux block: shilajit honey</li>
+                    </ol>
+                </div>
+                <div class="item">6/25/2025
+                    <ol>
+                        <li>PTSD Awareness Day 2025</li>
+                        <li>best selling ux block and pp optimization: Gold irish sea moss</li>
+                    </ol>
+                </div>
+                <div class="item">6/26/2025
+                    <ol>
+                        <li>ux block: soursop leaves 50G (fresh)</li>
+                        <li>seo optimize product page: soursop leaves 50G (fresh)</li>
+                        <li>finding the webpages contains alcohol</li>
+                    </ol>
+                </div>
+                <div class="item">6/27/2025
+                    <ol>
+                        <li>worked on "prekese aidan fruit" the ux block, complete and updated (link and doc on asana)</li>
+                        <li>worked on "prekese aidan fruit" seo optimize product page, complete</li>
+                        <li>worked on purple sea moss, product page</li>
+                        <li>worked on the LCP, INP issue of the few webpages</li>
+                    </ol>
+                </div>
+                <div class="item">6/30/2025
+                    <ol>
+                        <li>Purple sea moss ux block (kw research, research on the benefits, work on the content, plagiarism check, edit, check compatibility for desktop/tab/mobile)</li>
+                        <li>Turmeric honey ux block</li>
+                        <li>Turmeric honey SEO optimize product page (Title/meta des/short/long descriptions/url)</li>
+                        <li>July 01 blogpost</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click event listeners to items for interactivity
+        document.querySelectorAll('.item').forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active class from all items in the same section
+                item.parentElement.querySelectorAll('.item').forEach(sibling => {
+                    sibling.classList.remove('active');
                 });
+                // Add active class to clicked item
+                item.classList.add('active');
+                // Optional: Log the clicked item for further functionality
+                console.log('Clicked:', item.textContent);
             });
-        </script>
-    </body>
-    </html>
+        });
+    </script>
+</body>
+</html>
